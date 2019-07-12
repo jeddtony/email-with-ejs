@@ -9,8 +9,8 @@ exports.sendMail = function(req,res){
     port: 25,
     secure: false,  //true for 465 port, false for other ports
     auth: {
-      user: 'a0f693b4b819ab',
-      pass: 'ae4df4830fe496'
+      user: 'username',
+      pass: 'password'
     },
     tls:{
         rejectUnauthorized: false
@@ -32,12 +32,12 @@ exports.sendMail = function(req,res){
   email.send({
     template: 'emailtemplates',
     message: {
-      from: 'info@rosabon-finance.com',
-      to: 'nowjdeji@gmail.com',
+      from: 'sender@yourdomain.com',
+      to: 'recipient@anydomain.com',
     },
     locals: {
-      fname: 'John',
-      lname: 'Snow',
+      fname: 'Jed',
+      lname: 'Tony'
     }
   }).then(() => console.log('email has been sent!'));
 
